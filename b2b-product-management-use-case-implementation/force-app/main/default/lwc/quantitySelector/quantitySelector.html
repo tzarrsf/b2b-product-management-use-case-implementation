@@ -1,0 +1,8 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <select id='select-01' class={selectClass} onchange={handleQtyChange} onclick={handleOnClick}>
+        <template for:item='amount' for:each={amounts}>
+            <option value={amount.amount} key={amount.amount} selected={amount.selected}>{amount.amount}</option>
+        </template>
+    </select>
+</template>

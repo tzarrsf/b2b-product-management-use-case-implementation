@@ -1,0 +1,6 @@
+.container{
+    border: solid 1px black;
+    background: rgba(0,0,50,0.1);
+    padding: 20px;
+    border-radius: 6px;
+}

@@ -1,0 +1,19 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 07-31-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <template if:true={reservationActive}>
+        <div class="container">
+            <div style="font-size: 20px;text-align:center;">Reservation active! Please check out to secure your products.</div>
+        </div>
+    </template>
+    <template if:false={reservationActive}>
+        <div class="container">
+            <div style="font-size: 20px;text-align:center;">No active reservations.</div>
+        </div>
+    </template>
+</template>

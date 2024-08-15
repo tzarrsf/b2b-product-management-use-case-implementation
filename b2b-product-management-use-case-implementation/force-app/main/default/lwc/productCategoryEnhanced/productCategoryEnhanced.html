@@ -1,0 +1,35 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <template if:true={hasResult}>
+        <div class="container">
+            <template for:each={products} for:item="product">
+                <div class="product-card" key={product.id}>
+                    <div class="product-image">{product.image}</div>
+                    <div class="product-name">{product.name}</div>
+                    <div class="product-sku">SKU: {product.sku}</div>
+                    <div class="product-price"><lightning-formatted-number value={product.price} format-style="currency" currency-code="USD"></lightning-formatted-number></div>
+                    <div class="product-qty">Available: {product.availableToOrder}</div>
+                    <div class="product-sku">Qty: <c-quantity-selector max-qty={product.availableToOrder} id={product.id} onquantitychange={handleQtyChange}
+                        ></c-quantity-selector>
+                    </div>
+                    <!--
+                    <div class="product-qty"><c-price-adjustment-schedule-callout product-id={product.id}></c-price-adjustment-schedule-callout></div>
+                    -->
+                    <template if:false={product.unavailable}>
+                        <button data-id={product.id} class="add-to-cart" onclick={handleAddToCart}>Add to cart</button>
+                    </template>
+                    <template if:true={product.unavailable}>
+                        <button data-id={product.id} class="add-to-cart disabled" onclick={handleAddToCart}>Add to cart</button>
+                    </template>
+                </div>
+            </template>
+        </div>
+    </template>
+    <template if:true={addToCartSuccess}>
+        <section class="black transparency-container"></section>
+        <div class="message">
+            Item added to cart!
+            <button onclick={handleOkButton}>OK</button>
+        </div>
+    </template>
+</template>
