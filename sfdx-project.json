@@ -5,7 +5,7 @@
       "default": true
     }
   ],
-  "name": "b2b-product-category-enhancements",
+  "name": "b2b-product-management-use-case-implementation",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "61.0"
